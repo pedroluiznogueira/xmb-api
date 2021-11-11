@@ -35,6 +35,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/aerodrome/get-all").permitAll()
                 .antMatchers("/aerodrome/create").permitAll()
                 .antMatchers("/runway/create").permitAll()
+                .antMatchers("/aerodrome/create-list").permitAll()
                 .antMatchers("/runway/get-all").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic()

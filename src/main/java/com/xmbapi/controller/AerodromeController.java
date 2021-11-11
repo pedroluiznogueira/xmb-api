@@ -20,6 +20,11 @@ public class AerodromeController {
         return this.aerodromeService.createAerodrome(aerodrome);
     }
 
+    @PostMapping("create-list")
+    public String createAerodromes(@RequestBody List<Aerodrome> aerodromes){
+        return this.aerodromeService.createAerodromes(aerodromes);
+    }
+
     @GetMapping("get-all")
     public List<Aerodrome> getAerodromes(){
         return this.aerodromeService.getAerodromes();

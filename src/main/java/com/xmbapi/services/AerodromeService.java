@@ -21,8 +21,6 @@ public class AerodromeService {
 
     public Aerodrome createAerodrome(Aerodrome aerodrome){
 
-        Optional<List<Runway>> runways = Optional.of(aerodrome.getRunways());
-
         Aerodrome saveAerodrome = this.aerodromeRepository.save(aerodrome);
 
         for (Runway runway: aerodrome.getRunways()){
@@ -31,6 +29,15 @@ public class AerodromeService {
         }
 
         return saveAerodrome;
+    }
+
+    public String createAerodromes(List<Aerodrome> aerodromes) {
+
+        for (Aerodrome aerodrome : aerodromes){
+            this.createAerodrome(aerodrome);
+        }
+
+        return "Sucesso";
     }
 
     public List<Aerodrome> getAerodromes(){

@@ -24,7 +24,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Optional<User> login(UserLogin userLogin){
+    public UserLogin login(UserLogin userLogin){
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
@@ -42,7 +42,7 @@ public class UserService {
 
                 userLogin.setToken(authHeader);
 
-                return user;
+                return userLogin;
             }
         }
         return null;
